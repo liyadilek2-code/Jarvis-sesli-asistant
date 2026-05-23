@@ -1,0 +1,18 @@
+{
+  "name": "jarvis-assistant",
+  "version": "1.0.0",
+  "description": "Iron Man Jarvis Style AI Assistant Module for MagicMirror²",
+  "repository": "https://github.com/liyadilek2-code/Jarvis-sesli-asistant",
+  "author": "liyadilek2-code",
+  "license": "MIT",
+  "keywords": [
+    "jarvis",
+    "voice-assistant",
+    "ai",
+    "magic-mirror",
+    "gemini",
+    "iron-man",
+    "ui",
+    "display"
+  ]
+}

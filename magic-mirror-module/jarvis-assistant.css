@@ -1,0 +1,420 @@
+/* Jarvis Assistant Module - Iron Man Styled CSS */
+
+.jarvis-container {
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+  border: 2px solid #00d9ff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.3), inset 0 0 20px rgba(0, 217, 255, 0.05);
+  color: #00d9ff;
+  font-family: 'Courier New', monospace;
+  min-width: 300px;
+  max-width: 600px;
+  transition: all 0.3s ease;
+}
+
+.jarvis-container.jarvis-small {
+  min-width: 250px;
+  padding: 15px;
+}
+
+.jarvis-container.jarvis-large {
+  min-width: 700px;
+  padding: 30px;
+}
+
+.jarvis-container.jarvis-light {
+  background: linear-gradient(135deg, #f0f0f0 0%, #ffffff 100%);
+  border-color: #2196f3;
+  color: #2196f3;
+  box-shadow: 0 0 20px rgba(33, 150, 243, 0.2), inset 0 0 20px rgba(33, 150, 243, 0.05);
+}
+
+.jarvis-container.muted {
+  opacity: 0.5;
+  filter: blur(2px);
+}
+
+/* Header */
+.jarvis-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #00d9ff;
+}
+
+.jarvis-logo {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px #00d9ff, 0 0 20px rgba(0, 217, 255, 0.5);
+  animation: glow 2s ease-in-out infinite;
+}
+
+.jarvis-status {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #4caf50;
+  box-shadow: 0 0 5px #4caf50;
+  transition: all 0.3s ease;
+}
+
+.jarvis-status.listening {
+  background: #00d9ff;
+  box-shadow: 0 0 15px #00d9ff, 0 0 30px rgba(0, 217, 255, 0.5);
+  animation: pulse 0.5s ease-in-out infinite;
+}
+
+.jarvis-status.speaking {
+  background: #ff9800;
+  box-shadow: 0 0 15px #ff9800, 0 0 30px rgba(255, 152, 0, 0.5);
+  animation: pulse 0.3s ease-in-out infinite;
+}
+
+/* Microphone Section */
+.jarvis-mic-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  padding: 20px;
+  background: rgba(0, 217, 255, 0.05);
+  border: 1px solid rgba(0, 217, 255, 0.2);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.jarvis-microphone {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 15px;
+}
+
+.jarvis-microphone.active {
+  animation: micPulse 0.5s ease-in-out infinite;
+}
+
+.jarvis-mic-icon {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: #00d9ff;
+  stroke-width: 2;
+  filter: drop-shadow(0 0 5px #00d9ff);
+}
+
+.jarvis-mic-circle {
+  animation: circleGrow 1s ease-in-out infinite;
+}
+
+.jarvis-mic-shape {
+  fill: #00d9ff;
+  filter: drop-shadow(0 0 5px #00d9ff);
+}
+
+.jarvis-wave {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.jarvis-wave span {
+  width: 3px;
+  height: 30px;
+  background: #00d9ff;
+  border-radius: 2px;
+  opacity: 0;
+  filter: drop-shadow(0 0 3px #00d9ff);
+  animation: none;
+}
+
+.jarvis-wave.animate span {
+  animation: waveAnimation 0.8s ease-in-out infinite;
+}
+
+.jarvis-status-text {
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Command Display */
+.jarvis-command-display,
+.jarvis-response-display {
+  margin: 15px 0;
+  padding: 15px;
+  background: rgba(0, 217, 255, 0.08);
+  border-left: 3px solid #00d9ff;
+  border-radius: 5px;
+  animation: slideIn 0.5s ease-out;
+}
+
+.jarvis-label {
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.jarvis-command-text,
+.jarvis-response-text {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #00d9ff;
+  word-break: break-word;
+  animation: typewriter 0.5s steps(60, end);
+}
+
+/* History Section */
+.jarvis-history-section {
+  margin: 15px 0;
+  padding: 15px;
+  background: rgba(0, 217, 255, 0.05);
+  border-radius: 5px;
+}
+
+.jarvis-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.jarvis-history-item {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  background: rgba(0, 217, 255, 0.1);
+  border-radius: 4px;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.jarvis-history-item:hover {
+  background: rgba(0, 217, 255, 0.2);
+  transform: translateX(5px);
+}
+
+.jarvis-history-number {
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+  font-weight: bold;
+  margin-right: 8px;
+  color: #ff9800;
+}
+
+.jarvis-history-command {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Statistics Section */
+.jarvis-stats-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin: 15px 0;
+  padding: 15px;
+  background: rgba(0, 217, 255, 0.05);
+  border-radius: 5px;
+}
+
+.jarvis-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background: rgba(0, 217, 255, 0.1);
+  border-radius: 4px;
+  border: 1px solid rgba(0, 217, 255, 0.2);
+}
+
+.jarvis-stat-label {
+  font-size: 11px;
+  opacity: 0.7;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.jarvis-stat-value {
+  font-size: 18px;
+  font-weight: bold;
+  color: #00d9ff;
+  text-shadow: 0 0 5px #00d9ff;
+}
+
+/* Controls */
+.jarvis-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(0, 217, 255, 0.2);
+}
+
+.jarvis-btn {
+  background: rgba(0, 217, 255, 0.1);
+  border: 1px solid #00d9ff;
+  color: #00d9ff;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(0, 217, 255, 0.5);
+}
+
+.jarvis-btn:hover {
+  background: rgba(0, 217, 255, 0.2);
+  box-shadow: 0 0 10px #00d9ff, inset 0 0 10px rgba(0, 217, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.jarvis-btn:active {
+  transform: scale(0.95);
+}
+
+/* Animations */
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 10px #00d9ff, 0 0 20px rgba(0, 217, 255, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px #00d9ff, 0 0 40px rgba(0, 217, 255, 0.8);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes micPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes circleGrow {
+  0%, 100% {
+    r: 45;
+    opacity: 1;
+  }
+  50% {
+    r: 50;
+    opacity: 0.5;
+  }
+}
+
+@keyframes waveAnimation {
+  0% {
+    height: 30px;
+    opacity: 0;
+  }
+  50% {
+    height: 60px;
+    opacity: 1;
+  }
+  100% {
+    height: 30px;
+    opacity: 0;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .jarvis-container {
+    min-width: auto;
+    max-width: 90vw;
+    padding: 15px;
+  }
+
+  .jarvis-stats-section {
+    grid-template-columns: 1fr;
+  }
+
+  .jarvis-microphone {
+    width: 80px;
+    height: 80px;
+  }
+
+  .jarvis-wave {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* Light Theme Adjustments */
+.jarvis-light .jarvis-command-display,
+.jarvis-light .jarvis-response-display,
+.jarvis-light .jarvis-history-section,
+.jarvis-light .jarvis-stats-section {
+  background: rgba(33, 150, 243, 0.08);
+  border-left-color: #2196f3;
+}
+
+.jarvis-light .jarvis-history-item,
+.jarvis-light .jarvis-stat-item {
+  background: rgba(33, 150, 243, 0.1);
+  border-color: rgba(33, 150, 243, 0.2);
+}
+
+.jarvis-light .jarvis-btn {
+  background: rgba(33, 150, 243, 0.1);
+  border-color: #2196f3;
+  color: #2196f3;
+}
+
+.jarvis-light .jarvis-btn:hover {
+  background: rgba(33, 150, 243, 0.2);
+  box-shadow: 0 0 10px #2196f3, inset 0 0 10px rgba(33, 150, 243, 0.1);
+}
